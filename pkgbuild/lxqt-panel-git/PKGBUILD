@@ -8,8 +8,8 @@ pkgdesc='The LXQt desktop panel'
 arch=('amd64')
 url='https://github.com/lxqt/lxqt-panel'
 license=("LGPL-2.1-only")
-depends=('libstatgrab10t64' 'libsensors5' 'libqt6widgets6' 'libxtst6' 'libasound2t64' 'libpulse0'
-         'layer-shell-qt' 'libkf6solid6' 'libkf6windowsystem6' 'libxcb-damage0'
+depends=('libstatgrab10t64' 'libsensors5' 'libqt6widgets6' 'libxtst6' 'libasound2t64' 'libpulse0' 'layer-shell-qt'
+         'libkf6solid6' 'libkf6windowsystem6' 'libxcb-damage0' 'libxcb-dpms0' 'libxcb-screensaver0' 'libkf6screendpms8'
          'libsysstat-git' 'libdbusmenu-lxqt-git' 'liblxqt-git' 'lxqt-menu-data-git' 'lxqt-globalkeys-git')
 makedepends=('git' 'cmake' 'lxqt-build-tools-git'
              'libasound2-dev' 'libpulse-dev' 'libxtst-dev' 'libx11-xcb-dev'

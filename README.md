@@ -13,11 +13,11 @@
 
    NOTE: Some dependencies may not be satisfied installing individually. Refer to https://github.com/lxqt/lxqt/wiki/Building-from-source for build order.
 
-To clean all build files except for `PKGBUILD`s, run `./clean.sh`.
+- To clean all build files except for `PKGBUILD`s, run `./clean.sh`.
 
-`apt autoremove`/`auto autopurge` should be able to be safely run after installation. This will remove unneeded makedepends.
+- `apt autoremove`/`auto autopurge` should be able to be safely run after installation. This will remove unneeded makedepends.
 
-**Currently only tested and recommended for a reasonably recent version of Ubuntu.**
+**Currently only tested on and recommended for recent (as of 2025) versions of Ubuntu.**
 
 ### Current PKGBUILDs:
 
