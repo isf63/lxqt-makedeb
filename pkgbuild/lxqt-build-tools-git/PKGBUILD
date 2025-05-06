@@ -2,7 +2,7 @@
 
 _pkgname=lxqt-build-tools
 pkgname=$_pkgname-git
-pkgver=0.13.0.r3.g7e1175e
+pkgver=2.2.0
 pkgrel=1
 pkgdesc='Tools to build LXQt and components maintained by the project.'
 arch=('any')
@@ -14,6 +14,11 @@ provides=("$_pkgname")
 conflicts=("$_pkgname")
 source=("git+${url}.git")
 sha256sums=("SKIP")
+
+pkgver() {
+	cd "$srcdir/$_pkgname"
+	git describe --tags --long | sed 's/-/.r/;s/-/./'
+}
 
 build() {
   rm -Rf build ; mkdir build

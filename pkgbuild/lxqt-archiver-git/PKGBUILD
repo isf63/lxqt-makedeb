@@ -2,20 +2,25 @@
 
 _pkgname=lxqt-archiver
 pkgname=$_pkgname-git
-pkgver=1.1.0
+pkgver=1.2.0
 pkgrel=1
 pkgdesc=" A simple & lightweight desktop-agnostic Qt file archiver"
 arch=('amd64')
 url="https://lxqt.org"
 license=("GPL2")
-depends=('libfm-qt-git' 'libglib2.0-0t64' 'libjson-glib-1.0-0')
+depends=('libfm-qt-git' 'libglib2.0-0t64' 'libjson-glib-1.0-0' libxcb-util1)
 makedepends=('git' 'cmake' 'lxqt-build-tools-git' 'libmenu-cache-dev'
              'libglib2.0-dev' 'libjson-glib-dev' 'qt6-tools-dev'
-             'libexif-dev')
+             'libxcb-util0-dev' 'libexif-dev')
 provides=("$_pkgname=$pkgver")
 conflicts=("$_pkgname")
 source=("git+https://github.com/lxqt/$_pkgname.git")
 sha256sums=('SKIP')
+
+pkgver() {
+	cd "$srcdir/$_pkgname"
+	git describe --tags --long | sed 's/-/.r/;s/-/./'
+}
 
 prepare() {
   mkdir -p build

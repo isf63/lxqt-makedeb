@@ -2,7 +2,7 @@
 
 _pkgname=libsysstat
 pkgname=$_pkgname-git
-pkgver=1.0.0
+pkgver=1.1.0
 pkgrel=1
 pkgdesc='Library to query system information like CPU and memory usage or network traffic'
 arch=('amd64')
@@ -14,6 +14,11 @@ provides=("$_pkgname=$pkgver")
 conflicts=("$_pkgname")
 source=("git+${url}.git")
 sha256sums=("SKIP")
+
+pkgver() {
+	cd "$srcdir/$_pkgname"
+	git describe --tags --long | sed 's/-/.r/;s/-/./'
+}
 
 build() {
   mkdir -p build

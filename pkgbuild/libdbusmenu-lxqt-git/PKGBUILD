@@ -2,7 +2,7 @@
 
 _pkgname=libdbusmenu-lxqt
 pkgname=$_pkgname-git
-pkgver=0.2.0 # https://github.com/lxqt/libdbusmenu-lxqt/blob/master/CHANGELOG
+pkgver=0.3.0
 pkgrel=1
 pkgdesc='A library that provides a Qt implementation of the DBusMenu spec'
 arch=('amd64')
@@ -11,12 +11,17 @@ url='https://github.com/lxqt/libdbusmenu-lxqt'
 # All source files contain "any later"
 license=(LGPL-2.0-or-later)
 depends=('libqt6core6t64')
-makedepends=('cmake' 'doxygen' 'git' 'qt6-base-dev')
+makedepends=('git' 'cmake' 'doxygen' 'qt6-base-dev')
 #checkdepends=(dbus xvfb)
 provides=("$_pkgname=$pkgver")
 conflicts=("$_pkgname")
 source=("git+https://github.com/lxqt/libdbusmenu-lxqt")
 sha256sums=('SKIP')
+
+pkgver() {
+	cd "$srcdir/$_pkgname"
+	git describe --tags --long | sed 's/-/.r/;s/-/./'
+}
 
 build() {
   cmake -B build -S libdbusmenu-lxqt \

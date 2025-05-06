@@ -2,7 +2,7 @@
 
 _pkgname=qtermwidget
 pkgname=$_pkgname-git
-pkgver=1.4.0.44.g75c0066
+pkgver=2.2.0
 pkgrel=1
 pkgdesc="A terminal widget for Qt, used by QTerminal"
 arch=('amd64')
@@ -19,6 +19,11 @@ optdepends=(
 )
 source=("git+https://github.com/lxqt/$_pkgname.git")
 sha256sums=('SKIP')
+
+pkgver() {
+	cd "$srcdir/$_pkgname"
+	git describe --tags --long | sed 's/-/.r/;s/-/./'
+}
 
 build() {
   mkdir -p build

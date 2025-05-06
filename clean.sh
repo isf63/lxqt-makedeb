@@ -2,6 +2,6 @@
 
 for make_dir in ./pkgbuild/*; do
 	cd "$make_dir"
-	find . ! -name "." ! -name "PKGBUILD" -exec rm -rf {} +
+	find . -maxdepth 1 ! -name "." ! -name "PKGBUILD" -exec gio trash {} +
 	cd ../..
 done

@@ -6,18 +6,22 @@
 
 ### Installation
 
-1. Clone this repo: `git clone https://github.com/isf63/lxqt-makedeb; cd lxqt-makedeb`.
-2. To install all of LXQt -git, run `./install.sh all`. This builds and installs all packages in the correct order.
+1. Clone this repo: `git clone https://github.com/isf63/lxqt-makedeb;  cd lxqt-makedeb`.
+2. To install all of LXQt -git, run `./install.sh all`. This builds and installs all packages in the proper order.
 
-   To install specific components only, run e.g. `./install.sh lxqt-panel-git lxqt-config-git`.
+   To install specific packages only, run e.g. `./install.sh lxqt-panel-git lxqt-config-git`. *Note:* some LXQt dependencies may not be satisfied installing individually, refer to https://github.com/lxqt/lxqt/wiki/Building-from-source.
 
-   NOTE: Some dependencies may not be satisfied installing individually. Refer to https://github.com/lxqt/lxqt/wiki/Building-from-source for build order.
+### Post-installation
 
 - To clean all build files except for `PKGBUILD`s, run `./clean.sh`.
 
-- `apt autoremove`/`auto autopurge` should be able to be safely run after installation. This will remove unneeded makedepends.
+- `apt autoremove`/`auto autopurge` can safely be run after installation. This will remove unneeded makedepends.
 
-**Currently only tested on and recommended for recent (as of 2025) versions of Ubuntu.**
+### Note
+
+- This currently requires a manual fix to `makedeb`: remove "`--depth 1`" from lines 69 and 75 of `/usr/share/makedeb/source/git.sh`.
+
+- **Currently only tested on and recommended for recent (as of 2025) versions of Ubuntu.**
 
 ### Current PKGBUILDs:
 
@@ -51,6 +55,5 @@
 
 ### TODO
 
-- Add remaining packages - `lxqt-sudo-git`, `lxqt-openssh-askpass-git`, `screengrab-git`.
-- Double-check base `pkgver` and re-add proper `pkgver()` functions to append git hashes.
-- Re-add `check()` to one or two packages. Re-add PyQt6 bindings to QTermWidget.
+- Add remaining packages: `lxqt-sudo-git`, `lxqt-openssh-askpass-git`, `screengrab-git`.
+- Re-add `check()` to several packages; re-add PyQt6 bindings to QTermWidget.
