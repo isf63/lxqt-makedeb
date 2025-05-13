@@ -1,4 +1,4 @@
-# Maintainer: Chih-Hsuan Yen <yan12125@gmail.com>
+# Maintainer: isf63 <@>
 
 _pkgname=pcmanfm-qt
 pkgname=$_pkgname-git
@@ -19,8 +19,8 @@ source=("git+https://github.com/lxqt/${_pkgname}.git")
 sha256sums=('SKIP')
 
 pkgver() {
-	cd "$srcdir/$_pkgname"
-	git describe --tags --long | sed 's/-/.r/;s/-/./'
+  cd "$srcdir/$_pkgname"
+  git describe --tags --long | sed 's/-/.r/;s/-/./'
 }
 
 build() {

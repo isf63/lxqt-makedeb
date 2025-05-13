@@ -4,20 +4,20 @@
 
 - `makedeb` - https://www.makedeb.org/
 
-### Installation
+### Usage
 
 1. Clone this repo: `git clone https://github.com/isf63/lxqt-makedeb;  cd lxqt-makedeb`.
 2. To install all of LXQt -git, run `./install.sh all`. This builds and installs all packages in the proper order.
 
-   To install specific packages only, run e.g. `./install.sh lxqt-panel-git lxqt-config-git`. *Note:* some LXQt dependencies may not be satisfied installing individually, refer to https://github.com/lxqt/lxqt/wiki/Building-from-source.
+   To install specific packages only, run e.g. `./install.sh lxqt-panel-git lxqt-config-git`. *Note:* some LXQt dependencies may not be satisfied when installed individually, refer to https://github.com/lxqt/lxqt/wiki/Building-from-source.
 
-### Post-installation
+3. Run `./update.sh` to stay up-to-date.
 
 - To clean all build files except for `PKGBUILD`s, run `./clean.sh`.
 
-- `apt autoremove`/`auto autopurge` can safely be run after installation. This will remove unneeded makedepends.
+- `apt autoremove`/`auto autopurge` can safely be run after installation to remove unneeded makedepends.
 
-### Note
+### Notes
 
 - This currently requires a manual fix to `makedeb`: remove "`--depth 1`" from lines 69 and 75 of `/usr/share/makedeb/source/git.sh`.
 
@@ -56,4 +56,4 @@
 ### TODO
 
 - Add remaining packages: `lxqt-sudo-git`, `lxqt-openssh-askpass-git`, `screengrab-git`.
-- Re-add `check()` to several packages; re-add PyQt6 bindings to QTermWidget.
+- Re-add `check()` to a few packages; re-add PyQt6 bindings to QTermWidget.

@@ -1,4 +1,4 @@
-# Maintainer: Chih-Hsuan Yen <yan12125@gmail.com>
+# Maintainer: isf63 <@>
 
 _pkgname=libfm-qt
 pkgname=$_pkgname-git
@@ -10,7 +10,7 @@ url='https://lxqt-project.org'
 license=('LGPL-2.1-only')
 depends=('libc6' 'libgcc-s1' 'libglib2.0-0t64' 'libexif12'  'libxcb1'
          'libqt6core6t64' 'lxqt-menu-data-git' 'libmenu-cache3')
-makedepends=('git' 'cmake''lxqt-build-tools-git'
+makedepends=('git' 'cmake' 'lxqt-build-tools-git'
              'qt6-tools-dev' 'qt6-base-private-dev'
              'libmenu-cache-dev' 'libexif-dev' 'libglib2.0-dev')
 optdepends=('gvfs: support for the trash bin and network devices')
@@ -20,18 +20,18 @@ source=('git+https://github.com/lxqt/libfm-qt.git')
 sha256sums=('SKIP')
 
 pkgver() {
-	cd "$srcdir/$_pkgname"
-	git describe --tags --long | sed 's/-/.r/;s/-/./'
+  cd "$srcdir/$_pkgname"
+  git describe --tags --long | sed 's/-/.r/;s/-/./'
 }
 
 build() {
   cd ${_pkgname}
 
   cmake -S . -B build \
-    -DCMAKE_BUILD_TYPE='None' \
-    -DCMAKE_INSTALL_PREFIX='/usr' \
-    -DCMAKE_INSTALL_LIBDIR='lib' \
-    -Wno-dev
+        -DCMAKE_BUILD_TYPE='None' \
+        -DCMAKE_INSTALL_PREFIX='/usr' \
+        -DCMAKE_INSTALL_LIBDIR='lib' \
+        -Wno-dev
   cmake --build build
 }
 

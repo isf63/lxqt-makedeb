@@ -1,4 +1,4 @@
-# Maintainer: Chih-Hsuan Yen <base64_decode("eXUzYWN0eHQydHR0ZmlteEBjaHllbi5jYwo=")>
+# Maintainer: isf63 <@>
 
 _pkgname=lximage-qt
 pkgname=$_pkgname-git
@@ -24,8 +24,8 @@ source=("git+https://github.com/lxqt/$_pkgname.git")
 sha256sums=('SKIP')
 
 pkgver() {
-	cd "$srcdir/$_pkgname"
-	git describe --tags --long | sed 's/-/.r/;s/-/./'
+  cd "$srcdir/$_pkgname"
+  git describe --tags --long | sed 's/-/.r/;s/-/./'
 }
 
 prepare() {
@@ -36,8 +36,8 @@ prepare() {
 build() {
   cd $_pkgname/build
   cmake \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    ..
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        ..
   make
 }
 

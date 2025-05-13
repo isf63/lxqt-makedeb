@@ -2,30 +2,34 @@
 
 makedeb_install() {
 	cd ./pkgbuild/"$1"
-	makedeb -si --no-confirm
-	# TODO: Do not reinstall if pkgver() has not changed
 	if [ $? -ne 0 ]; then
 		exit 1
 	fi
-	cd ../..
+	makedeb -si --no-confirm
+	if [ $? -ne 0 ]; then
+		cd -
+		exit 1
+	fi
+	cd -
 }
 
+# https://github.com/lxqt/lxqt/wiki/Building-from-source
 install_all() {
 	makedeb_install lxqt-build-tools-git
 	makedeb_install libdbusmenu-lxqt-git
-####
+########
 	makedeb_install libqtxdg-git
 	makedeb_install lxqt-menu-data-git
-####
+########
 	makedeb_install liblxqt-git
 	makedeb_install libsysstat-git
 	makedeb_install qtxdg-tools-git
 	makedeb_install libfm-qt-git
-####
+########
 	makedeb_install lxqt-globalkeys-git
 	makedeb_install lxqt-qtplugin-git
 	makedeb_install qtermwidget-git
-####
+########
 	makedeb_install lxqt-panel-git
 	makedeb_install pcmanfm-qt-git
 	makedeb_install qterminal-git

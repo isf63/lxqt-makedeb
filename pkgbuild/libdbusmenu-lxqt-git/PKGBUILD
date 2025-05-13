@@ -1,4 +1,4 @@
-# Maintainer: Chih-Hsuan Yen <base64_decode("eXUzYWN0eHQydHR0ZmlteEBjaHllbi5jYwo=")>
+# Maintainer: isf63 <@>
 
 _pkgname=libdbusmenu-lxqt
 pkgname=$_pkgname-git
@@ -19,8 +19,8 @@ source=("git+https://github.com/lxqt/libdbusmenu-lxqt")
 sha256sums=('SKIP')
 
 pkgver() {
-	cd "$srcdir/$_pkgname"
-	git describe --tags --long | sed 's/-/.r/;s/-/./'
+  cd "$srcdir/$_pkgname"
+  git describe --tags --long | sed 's/-/.r/;s/-/./'
 }
 
 build() {
@@ -29,7 +29,7 @@ build() {
   cmake --build build
 }
 
-# deleted 'check()', wasn't working on Ubuntu
+# TODO: re-add check()
 
 package() {
   DESTDIR="$pkgdir" cmake --install build

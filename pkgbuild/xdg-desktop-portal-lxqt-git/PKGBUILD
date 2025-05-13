@@ -1,4 +1,4 @@
-# Maintainer: Chih-Hsuan Yen <yan12125@archlinux.org>
+# Maintainer: isf63 <@>
 
 _pkgname=xdg-desktop-portal-lxqt
 pkgname=$_pkgname-git
@@ -14,8 +14,8 @@ source=(git+$url)
 sha256sums=('SKIP')
 
 pkgver() {
-	cd "$srcdir/$_pkgname"
-	git describe --tags --long | sed 's/-/.r/;s/-/./'
+  cd "$srcdir/$_pkgname"
+  git describe --tags --long | sed 's/-/.r/;s/-/./'
 }
 
 build() {

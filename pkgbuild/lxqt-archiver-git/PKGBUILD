@@ -1,4 +1,4 @@
-# Maintainer: Chih-Hsuan Yen <yan12125@gmail.com>
+# Maintainer: isf63 <@>
 
 _pkgname=lxqt-archiver
 pkgname=$_pkgname-git
@@ -18,8 +18,8 @@ source=("git+https://github.com/lxqt/$_pkgname.git")
 sha256sums=('SKIP')
 
 pkgver() {
-	cd "$srcdir/$_pkgname"
-	git describe --tags --long | sed 's/-/.r/;s/-/./'
+  cd "$srcdir/$_pkgname"
+  git describe --tags --long | sed 's/-/.r/;s/-/./'
 }
 
 prepare() {
@@ -30,15 +30,14 @@ build() {
   cd build
 
   cmake \
-    -DCMAKE_INSTALL_PREFIX=/usr \
-    -DCMAKE_INSTALL_LIBDIR=lib \
-    "$srcdir/$_pkgname"
+        -DCMAKE_INSTALL_PREFIX=/usr \
+        -DCMAKE_INSTALL_LIBDIR=lib \
+        "$srcdir/$_pkgname"
 
   make
 }
 
 package() {
   cd build
-
   make DESTDIR="$pkgdir" install
 }
