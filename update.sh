@@ -10,12 +10,21 @@ remote_version() {
 }
 
 for pkg in pkgbuild/*; do
+
+	dpkg -l "$(basename $pkg)" 1>/dev/null 2>/dev/null
+	if [ $? -ne 0 ]; then
+		continue
+	fi
+
 	case "$(remote_version $(basename $pkg))" in
+
 		"$(installed_version $(basename $pkg))"*)
 			echo -e "[UP-TO-DATE]\t$(basename $pkg)"
 			;;
+
 		*)
 			echo -e "[UPDATING]\t$(basename $pkg)"
+			find "$pkg" -maxdepth 1 ! -wholename "$pkg" ! -name "PKGBUILD" -exec gio trash {} +
 			./install.sh "$(basename $pkg)"
 			;;
 	esac

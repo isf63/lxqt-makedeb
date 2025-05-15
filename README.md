@@ -56,4 +56,5 @@
 ### TODO
 
 - Add remaining packages: `lxqt-sudo-git`, `lxqt-openssh-askpass-git`, `screengrab-git`.
-- Re-add `check()` to a few packages; re-add PyQt6 bindings to QTermWidget.
+- Re-add `check()` to a few packages.
+- Re-add PyQt6 bindings to QTermWidget.
