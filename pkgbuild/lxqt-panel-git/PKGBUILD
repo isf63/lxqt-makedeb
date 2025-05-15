@@ -2,7 +2,7 @@
 
 _pkgname=lxqt-panel
 pkgname=$_pkgname-git
-pkgver=2.2.0.r17.g4f733b55
+pkgver=2.2.0
 pkgrel=1
 pkgdesc='The LXQt desktop panel'
 arch=('amd64')
