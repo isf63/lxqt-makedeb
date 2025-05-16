@@ -10,6 +10,7 @@ url="https://lxqt-project.org"
 license=("LGPL-2.1-only")
 depends=('libqt6core6t64' 'libqt6svg6')
 makedepends=('git' 'cmake' 'qt6-base-private-dev' 'qt6-svg-dev' 'lxqt-build-tools-git')
+checkdepends=('xvfb')
 provides=("$_pkgname=$pkgver")
 conflicts=("$_pkgname")
 source=("git+https://github.com/lxqt/$_pkgname.git")
@@ -28,6 +29,11 @@ build() {
         -DCMAKE_INSTALL_LIBDIR=lib \
         -DBUILD_TESTS=ON
   make
+}
+
+check() {
+  cd build
+  xvfb-run make test
 }
 
 package() {

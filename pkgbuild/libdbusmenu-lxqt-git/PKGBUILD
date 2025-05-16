@@ -12,7 +12,7 @@ url='https://github.com/lxqt/libdbusmenu-lxqt'
 license=(LGPL-2.0-or-later)
 depends=('libqt6core6t64')
 makedepends=('git' 'cmake' 'doxygen' 'qt6-base-dev')
-#checkdepends=(dbus xvfb)
+#checkdepends=('dbus' 'dbus-x11' 'xvfb')
 provides=("$_pkgname=$pkgver")
 conflicts=("$_pkgname")
 source=("git+https://github.com/lxqt/libdbusmenu-lxqt")
@@ -29,7 +29,10 @@ build() {
   cmake --build build
 }
 
-# TODO: re-add check()
+# Tests do not pass on Ubuntu 25.04. For now simply disable them.
+#check() {
+#  dbus-launch xvfb-run --auto-servernum cmake --build build --target check
+#}
 
 package() {
   DESTDIR="$pkgdir" cmake --install build
