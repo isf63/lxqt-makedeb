@@ -14,7 +14,7 @@ makedepends=('git' 'cmake' 'lxqt-build-tools-git'
              'qt6-tools-dev' 'qt6-base-private-dev'
              'libmenu-cache-dev' 'libexif-dev' 'libglib2.0-dev')
 optdepends=('gvfs: support for the trash bin and network devices')
-provides=("${_pkgname}=${pkgver}")
+provides=("libfm-qt6-15=$pkgver" "libfm-qt6-common=$pkgver")
 conflicts=("${_pkgname}" 'pcmanfm-qt<=0.10.0')
 source=('git+https://github.com/lxqt/libfm-qt.git')
 sha256sums=('SKIP')

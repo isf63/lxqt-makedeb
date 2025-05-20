@@ -11,7 +11,7 @@ license=('LGPL-2.1-only')
 depends=('libqt6core6t64' 'libqt6gui6' 'libpolkit-qt6-1-1' 'libkf6windowsystem6' 'libqtxdg-git' 'libxss1')
 makedepends=('git' 'cmake' 'qt6-svg-dev' 'qt6-tools-dev' 'lxqt-build-tools-git'
              'libglib2.0-dev' 'libxss-dev' 'libkf6windowsystem-dev' 'libpolkit-qt6-1-dev')
-provides=("$_pkgname=$pkgver")
+provides=("liblxqt2=$pkgver")
 conflicts=("$_pkgname")
 source=("git+https://github.com/lxqt/$_pkgname.git")
 sha256sums=('SKIP')

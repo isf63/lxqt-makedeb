@@ -1,7 +1,7 @@
 #/usr/bin/env bash
 
-for make_dir in ./pkgbuild/*; do
-	cd "$make_dir"
-	find . -maxdepth 1 ! -name "." ! -name "PKGBUILD" -exec gio trash {} +
+for pkg in ./pkgbuild/*; do
+	cd "$pkg"
+	find . -maxdepth 1 ! -name "." ! -name "PKGBUILD" -exec sudo rm -rI {} +
 	cd ../..
 done

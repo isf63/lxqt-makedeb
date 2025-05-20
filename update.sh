@@ -24,7 +24,7 @@ for pkg in pkgbuild/*; do
 
 		*)
 			echo -e "[UPDATING]\t$(basename $pkg)"
-			find "$pkg" -maxdepth 1 ! -wholename "$pkg" ! -name "PKGBUILD" -exec gio trash {} +
+			find "$pkg" -maxdepth 1 ! -wholename "$pkg" ! -name "PKGBUILD" -exec sudo rm -rI {} +
 			./install.sh "$(basename $pkg)"
 			;;
 	esac
