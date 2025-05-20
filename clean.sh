@@ -1,7 +1,6 @@
 #/usr/bin/env bash
 
 for pkg in ./pkgbuild/*; do
-	cd "$pkg"
-	find . -maxdepth 1 ! -name "." ! -name "PKGBUILD" -exec sudo rm -rI {} +
-	cd ../..
+	find "$pkg" -maxdepth 1 ! -wholename "$pkg" ! -name "PKGBUILD" -exec sudo rm -rf {} +
+	sed -i '/^pkgver/ s/\.r.*$//' "$pkg"/PKGBUILD
 done

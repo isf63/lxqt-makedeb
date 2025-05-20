@@ -14,7 +14,7 @@ makedeb_install() {
 }
 
 # https://github.com/lxqt/lxqt/wiki/Building-from-source
-install_all() {
+makedeb_install_all() {
 	makedeb_install lxqt-build-tools-git
 	makedeb_install libdbusmenu-lxqt-git
 ########
@@ -53,7 +53,7 @@ install_all() {
 
 case $1 in
 	"all")
-		install_all
+		makedeb_install_all
 		;;
 	*)
 		for arg in "$@"; do

@@ -10,7 +10,6 @@ remote_version() {
 }
 
 for pkg in pkgbuild/*; do
-
 	dpkg -l "$(basename $pkg)" 1>/dev/null 2>/dev/null
 	if [ $? -ne 0 ]; then
 		continue
@@ -24,7 +23,7 @@ for pkg in pkgbuild/*; do
 
 		*)
 			echo -e "[UPDATING]\t$(basename $pkg)"
-			find "$pkg" -maxdepth 1 ! -wholename "$pkg" ! -name "PKGBUILD" -exec sudo rm -rI {} +
+			find "$pkg" -maxdepth 1 ! -wholename "$pkg" ! -name "PKGBUILD" -exec sudo rm -rf {} +
 			./install.sh "$(basename $pkg)"
 			;;
 	esac
