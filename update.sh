@@ -23,7 +23,7 @@ for pkg in pkgbuild/*; do
 	if [[ "$_remote_hash" == "$_local_hash"* ]]; then
 		echo -e "[UP-TO-DATE]\t$_pkgname"
 	else
-		echo -e "[UPDATING]\t$_pkgname\t($_local_ver -> ${_remote_ver:0:8})"
+		echo -e "[UPDATING]\t$_pkgname\t($_local_ver -> ${_remote_hash:0:8})"
 
 		find "$pkg" -maxdepth 1 ! -wholename "$pkg" ! -name "PKGBUILD" -exec sudo rm -rf {} +
 		./install.sh "$_pkgname"
