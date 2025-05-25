@@ -8,15 +8,16 @@ pkgdesc='The LXQt desktop panel'
 arch=('amd64')
 url='https://github.com/lxqt/lxqt-panel'
 license=("LGPL-2.1-only")
-depends=('libstatgrab10t64' 'libsensors5' 'libqt6widgets6' 'libxtst6' 'libasound2t64' 'libpulse0' 'layer-shell-qt'
-         'libkf6solid6' 'libkf6windowsystem6' 'libxcb-damage0' 'libxcb-dpms0' 'libxcb-screensaver0' 'libkf6screendpms8'
-         'libsysstat-git' 'libdbusmenu-lxqt-git' 'liblxqt-git' 'lxqt-menu-data-git' 'lxqt-globalkeys-git')
+depends=('libstatgrab10t64' 'libqt6widgets6' 'libxtst6' 'libasound2t64' 'libpulse0' 'layer-shell-qt'
+         'libkf6solid6' 'libkf6windowsystem6' 'libkwaylandclient6' 'libkf6screendpms8'
+         'libxcb-damage0' 'libxcb-dpms0' 'libxcb-screensaver0'
+         'libsysstat-git' 'libsensors5' 'libdbusmenu-lxqt-git' 'liblxqt-git' 'lxqt-menu-data-git' 'lxqt-globalkeys-git')
 makedepends=('git' 'cmake' 'lxqt-build-tools-git'
              'libasound2-dev' 'libpulse-dev' 'libxtst-dev' 'libx11-xcb-dev'
              'libxcb-damage0-dev' 'libxcb-image0-dev' 'libxcb-randr0-dev' 'libxcb-composite0-dev'
              'libxcb-util0-dev' 'libxcb-xkb-dev' 'libxkbcommon-x11-dev' 'libstatgrab-dev'
-             'libsensors-dev' 'libkscreen-dev' 'libkf6solid-dev' 'libkf6windowsystem-dev'
-             'qt6-base-private-dev' 'qt6-svg-dev' 'liblayershellqtinterface-dev' 'qt6-tools-dev')
+             'libsensors-dev' 'libkscreen-dev' 'libkf6solid-dev' 'libkf5wayland-dev' 'libkf6windowsystem-dev'
+             'qt6-base-private-dev' 'qt6-wayland-private-dev' 'qt6-svg-dev' 'liblayershellqtinterface-dev' 'qt6-tools-dev')
 provides=("$_pkgname")
 conflicts=("$_pkgname")
 source=("git+${url}.git")

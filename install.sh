@@ -2,11 +2,11 @@
 
 makedeb_install() {
 	cd ./pkgbuild/"$1"
-	if [ $? -ne 0 ]; then
+	if [[ $? != 0 ]]; then
 		exit 1
 	fi
 	makedeb -si --no-confirm
-	if [ $? -ne 0 ]; then
+	if [[ $? != 0 ]]; then
 		cd -
 		exit 1
 	fi
@@ -51,13 +51,10 @@ makedeb_install_all() {
 	makedeb_install lximage-qt-git
 }
 
-case $1 in
-	"all")
+if [[ $1 == "all" ]]; then
 		makedeb_install_all
-		;;
-	*)
+else
 		for arg in "$@"; do
 			makedeb_install "$arg"
 		done
-		;;
-esac
+fi
