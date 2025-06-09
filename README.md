@@ -36,7 +36,7 @@ See `./pkgbuild/`
 
 #### TODO
 
-- Add remaining PKGBUILDs: `lxqt-sudo-git`, `lxqt-openssh-askpass-git`, `screengrab-git`.
+- Add remaining PKGBUILDs: `qps-git`, `lxqt-wayland-session-git`.
 
 - Re-add `check()` to several PKGBUILDs.
 
