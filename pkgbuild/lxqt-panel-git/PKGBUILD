@@ -16,7 +16,7 @@ makedepends=('git' 'cmake' 'lxqt-build-tools-git'
              'libasound2-dev' 'libpulse-dev' 'libxtst-dev' 'libx11-xcb-dev'
              'libxcb-damage0-dev' 'libxcb-image0-dev' 'libxcb-randr0-dev' 'libxcb-composite0-dev'
              'libxcb-util0-dev' 'libxcb-xkb-dev' 'libxkbcommon-x11-dev' 'libstatgrab-dev'
-             'libsensors-dev' 'libkscreen-dev' 'libkf6solid-dev' 'libkf5wayland-dev' 'libkf6windowsystem-dev'
+             'libsensors-dev' 'libkscreen-dev' 'libkf6solid-dev' 'libkf6windowsystem-dev'
              'qt6-base-private-dev' 'qt6-wayland-private-dev' 'qt6-svg-dev' 'liblayershellqtinterface-dev' 'qt6-tools-dev')
 provides=("$_pkgname")
 conflicts=("$_pkgname")

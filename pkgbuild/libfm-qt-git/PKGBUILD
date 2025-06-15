@@ -8,7 +8,7 @@ pkgdesc='Qt port of libfm, a library providing components to build desktop file 
 arch=('amd64')
 url='https://lxqt-project.org'
 license=('LGPL-2.1-only')
-depends=('libc6' 'libgcc-s1' 'libglib2.0-0t64' 'libexif12'  'libxcb1'
+depends=('libgcc-s1' 'libglib2.0-0t64' 'libexif12'  'libxcb1'
          'libqt6core6t64' 'lxqt-menu-data-git' 'libmenu-cache3')
 makedepends=('git' 'cmake' 'lxqt-build-tools-git'
              'qt6-tools-dev' 'qt6-base-private-dev'
