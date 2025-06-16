@@ -9,6 +9,8 @@ arch=('amd64')
 url='https://lxqt-project.org'
 license=('LGPL-2.1-only')
 depends=('libgcc-s1' 'libglib2.0-0t64' 'libexif12'  'libxcb1'
+         'libxcb-xfixes0'
+# more libxcb- ...
          'libqt6core6t64' 'lxqt-menu-data-git' 'libmenu-cache3')
 makedepends=('git' 'cmake' 'lxqt-build-tools-git'
              'qt6-tools-dev' 'qt6-base-private-dev'
