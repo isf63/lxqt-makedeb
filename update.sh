@@ -33,5 +33,8 @@ for pkg in pkgbuild/*; do
 
 		find "$pkg" -maxdepth 1 ! -wholename "$pkg" ! -name "PKGBUILD" -exec sudo rm -rf {} +
 		./install.sh "$_pkgname"
+		if [[ $? != 0 ]]; then
+			exit
+		fi
 	fi
 done
