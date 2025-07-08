@@ -24,7 +24,7 @@
 
 #### Notes
 
-- **Has only been tested on, and is recommended for, recent versions of Ubuntu and Debian.**
+- **Has only been tested on and is recommended for recent versions of Ubuntu and Debian.**
 
 #### TODO
 

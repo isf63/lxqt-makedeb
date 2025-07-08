@@ -16,7 +16,7 @@ optdepends=(
 makedepends=('git' 'cmake' 'lxqt-build-tools-git' 'libexif-dev' 'libcups2-dev' 'libxfixes-dev'
              'libxcb-composite0-dev' 'libxcb-shape0-dev' 'libxcb-xfixes0-dev' 'libxcb-damage0-dev'
              'libxcb-dpms0-dev' 'libxcb-image0-dev' 'libxcb-randr0-dev' 'libxcb-screensaver0-dev'
-             'libxkbcommon-x11-dev' 'qt6-svg-dev' 'qt6-tools-dev')
+             'libxcb-cursor-dev' 'libxkbcommon-x11-dev' ''libmenu-cache-dev'' 'qt6-svg-dev' 'qt6-tools-dev')
 provides=("$_pkgname=$pkgver")
 conflicts=("$_pkgname")
 source=("git+https://github.com/lxqt/$_pkgname.git")
