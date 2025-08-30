@@ -10,7 +10,7 @@ url="https://lxqt.github.io"
 license=("LGPL-2.1-only")
 depends=('liblxqt-git')
 optdepends=('lxqt-policykit-git: polkit authentication agent provided by LXQt')
-makedepends=('git' 'cmake' 'qt6-tools-dev' 'lxqt-build-tools-git')
+makedepends=('git' 'cmake' 'libpolkit-qt6-1-dev' 'qt6-tools-dev' 'lxqt-build-tools-git')
 provides=("${_pkgname}=${pkgver}")
 conflicts=("${_pkgname}")
 source=("git+https://github.com/lxqt/${_pkgname}.git")
