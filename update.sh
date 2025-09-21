@@ -9,7 +9,7 @@ local_version() {
 }
 
 local_hash() {
-	echo $1 | sed 's/.*\..//; s/..$//'
+	echo "$1" | sed 's/.*\..//; s/..$//'
 }
 
 remote_hash() {
