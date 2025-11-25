@@ -2,7 +2,7 @@
 
 _pkgname=lxqt-policykit
 pkgname=$_pkgname-git
-pkgver=2.2.0
+pkgver=2.3.0
 pkgrel=1
 pkgdesc="The LXQt policykit authentication agent"
 arch=('amd64')

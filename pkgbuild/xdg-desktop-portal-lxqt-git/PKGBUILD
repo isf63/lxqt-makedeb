@@ -2,7 +2,7 @@
 
 _pkgname=xdg-desktop-portal-lxqt
 pkgname=$_pkgname-git
-pkgver=1.2.0
+pkgver=1.3.0
 pkgrel=1
 pkgdesc='A backend implementation for xdg-desktop-portal using Qt/KF5'
 arch=('amd64')

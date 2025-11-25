@@ -2,7 +2,7 @@
 
 _pkgname=lxqt-config
 pkgname=$_pkgname-git
-pkgver=2.2.0
+pkgver=2.3.0
 pkgrel=1
 pkgdesc="LXQt system configuration."
 arch=('amd64')

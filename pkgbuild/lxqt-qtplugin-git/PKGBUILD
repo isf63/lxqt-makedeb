@@ -2,7 +2,7 @@
 
 _pkgname=lxqt-qtplugin
 pkgname=$_pkgname-git
-pkgver=2.2.0
+pkgver=2.3.0
 pkgrel=1
 pkgdesc='LXQt platform integration for Qt'
 arch=('amd64')
