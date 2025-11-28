@@ -32,6 +32,8 @@ build() {
     -DCMAKE_INSTALL_PREFIX=/usr
   make
 
+#  cd "$srcdir/$_pkgname"/pyqt
+#  CXXFLAGS="-I$PWD/../lib -I$PWD/../../build/lib" LDFLAGS="-L$PWD/../../build" sip-wheel --verbose --qmake /usr/bin/qmake6
 }
 
 package() {
@@ -39,4 +41,6 @@ package() {
   make DESTDIR="$pkgdir" install
   install -Dm644 "$srcdir/$_pkgname/README.md" -t "$pkgdir"/usr/share/licenses/$pkgname
 
+#  cd "$srcdir/$_pkgname"/pyqt
+#  python -m installer --destdir="$pkgdir" *.whl
 }

@@ -24,5 +24,5 @@
 ### Has only been tested on and is recommended for recent releases of Ubuntu and Debian.
 
 #### TODO
-- Add remaining PKGBUILDs: `lxqt-wayland-session-git`, `obconf-qt-git`, `qps-git`
+- Add remaining PKGBUILDs: `qps-git`
 - Re-add PyQt6 bindings to QTermWidget

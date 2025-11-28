@@ -14,6 +14,9 @@ local_hash() {
 
 remote_hash() {
 	git ls-remote "https://github.com/lxqt/${1//-git/}" | head -1 | cut -f 1
+	if [[ $? != 0 ]]; then
+		exit
+	fi
 }
 
 if [[ "$(basename $PWD)" != "lxqt-makedeb" ]]; then
